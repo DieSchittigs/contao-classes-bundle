@@ -46,7 +46,7 @@ class HelperClass extends Frontend
             $cssId = (is_array($contentModel->cssID)) ? $contentModel->cssID[1] : unserialize($contentModel->cssID)[1];
         }
   
-        $classes = 'content-' . $contentModel->type . $cssId;
+        $classes = 'content-' . $contentModel->type . ($cssId ? ' ' . $cssId : '');
 
         if (!is_array($arrCustom = unserialize($contentModel->customClass))) return $buffer;
 
